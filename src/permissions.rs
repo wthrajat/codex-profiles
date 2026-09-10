@@ -7,7 +7,10 @@ use crate::error::{AppError, Result};
 use std::os::unix::fs::{DirBuilderExt, OpenOptionsExt, PermissionsExt};
 
 pub fn create_private_dir(path: &Path) -> Result<()> {
+    #[cfg(unix)]
     let mut builder = fs::DirBuilder::new();
+    #[cfg(not(unix))]
+    let builder = fs::DirBuilder::new();
 
     #[cfg(unix)]
     builder.mode(0o700);
@@ -45,13 +48,13 @@ pub fn create_private_file(path: &Path) -> Result<File> {
     Ok(file)
 }
 
-pub fn harden_directory(path: &Path) -> Result<()> {
+pub fn harden_directory(_path: &Path) -> Result<()> {
     #[cfg(unix)]
     {
         let permissions = fs::Permissions::from_mode(0o700);
-        fs::set_permissions(path, permissions).map_err(|error| {
+        fs::set_permissions(_path, permissions).map_err(|error| {
             AppError::io(
-                format!("could not set private permissions on {}", path.display()),
+                format!("could not set private permissions on {}", _path.display()),
                 error,
             )
         })?;
@@ -60,13 +63,13 @@ pub fn harden_directory(path: &Path) -> Result<()> {
     Ok(())
 }
 
-fn harden_file(path: &Path) -> Result<()> {
+fn harden_file(_path: &Path) -> Result<()> {
     #[cfg(unix)]
     {
         let permissions = fs::Permissions::from_mode(0o600);
-        fs::set_permissions(path, permissions).map_err(|error| {
+        fs::set_permissions(_path, permissions).map_err(|error| {
             AppError::io(
-                format!("could not set private permissions on {}", path.display()),
+                format!("could not set private permissions on {}", _path.display()),
                 error,
             )
         })?;
