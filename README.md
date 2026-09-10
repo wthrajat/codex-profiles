@@ -1,6 +1,6 @@
-# codex-profile-switcher
+# cxprof
 
-[![crates.io](https://img.shields.io/crates/v/codex-profile-switcher.svg)](https://crates.io/crates/codex-profile-switcher)
+[![crates.io](https://img.shields.io/crates/v/cxprof.svg)](https://crates.io/crates/cxprof)
 [![CI](https://github.com/wthrajat/codex-profiles/actions/workflows/ci.yml/badge.svg)](https://github.com/wthrajat/codex-profiles/actions/workflows/ci.yml)
 
 Rust CLI for using multiple local Codex accounts without logging one account out to use another. Each named profile is a complete, isolated `CODEX_HOME`
@@ -8,15 +8,13 @@ Rust CLI for using multiple local Codex accounts without logging one account out
 ## Install
 
 ```console
-cargo install codex-profile-switcher
+cargo install cxprof
 ```
-
-This installs the `cxprof` command.
 
 Prebuilt binaries for Linux, macOS, and Windows are also attached to each
 [GitHub release](https://github.com/wthrajat/codex-profiles/releases).
 
-To uninstall the binary, run `cargo uninstall codex-profile-switcher`. Cargo
+To uninstall the binary, run `cargo uninstall cxprof`. Cargo
 does not remove profile data; remove each profile explicitly before uninstalling
 if you no longer need its Codex state.
 

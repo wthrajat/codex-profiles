@@ -84,7 +84,7 @@ jobs:
       - name: Upload binary
         uses: actions/upload-artifact@v4
         with:
-          name: codex-profile-switcher-${{ matrix.target }}
+          name: cxprof-${{ matrix.target }}
           path: target/${{ matrix.target }}/release/${{ matrix.binary }}
           if-no-files-found: error
 
@@ -119,7 +119,7 @@ jobs:
           mkdir release-assets
           for directory in artifacts/*; do
             artifact="$(basename "$directory")"
-            target="${artifact#codex-profile-switcher-}"
+            target="${artifact#cxprof-}"
             if [ "$target" = "x86_64-pc-windows-msvc" ]; then
               (cd "$directory" && zip -9 "../../release-assets/$artifact.zip" cxprof.exe)
             else

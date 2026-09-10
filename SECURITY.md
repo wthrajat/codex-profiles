@@ -1,6 +1,6 @@
 # Security
 
-`codex-profile-switcher` sits next to authentication state, so its security
+`cxprof` sits next to authentication state, so its security
 boundary must remain deliberately narrow.
 
 ## Invariants

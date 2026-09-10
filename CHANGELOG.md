@@ -8,7 +8,7 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
-- Shortened the installed command to `cxprof`.
+- Renamed the package and installed command to `cxprof`.
 
 ## [0.1.0] - 2026-09-10
 
