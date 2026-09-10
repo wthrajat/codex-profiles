@@ -1,0 +1,44 @@
+[package]
+name = "codex-profile-switcher"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Launch Codex CLI with isolated local account profiles"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/wthrajat/codex-profile-switcher"
+homepage = "https://github.com/wthrajat/codex-profile-switcher"
+documentation = "https://docs.rs/codex-profile-switcher"
+authors = ["Rajat Khanduri <logsinx@proton.me> (https://wthrajat.com)"]
+keywords = ["codex", "profiles", "cli", "authentication"]
+categories = ["command-line-utilities", "development-tools"]
+include = [
+    "/src/**",
+    "/tests/**",
+    "/Cargo.toml",
+    "/Cargo.lock",
+    "/README.md",
+    "/CHANGELOG.md",
+    "/RELEASING.md",
+    "/LICENSE",
+    "/SECURITY.md",
+]
+
+[[bin]]
+name = "codex-profile-switcher"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+toml = "0.8"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+panic = "abort"
+strip = true
