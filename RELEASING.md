@@ -32,8 +32,8 @@ exist until its first publish. Replace it with a crate-scoped token afterward.
 3. Merge the release change to `main`, then create and push the matching tag:
 
    ```console
-   git tag -s v0.1.0 -m "Release v0.1.0"
-   git push origin v0.1.0
+   git tag -s v0.1.1 -m "Release v0.1.1"
+   git push origin v0.1.1
    ```
 
 The release workflow verifies that the tag matches `Cargo.toml`, repeats the
