@@ -59,16 +59,16 @@ jobs:
         include:
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-latest
-            binary: codex-profile-switcher
+            binary: cxprof
           - target: x86_64-apple-darwin
             os: macos-latest
-            binary: codex-profile-switcher
+            binary: cxprof
           - target: aarch64-apple-darwin
             os: macos-latest
-            binary: codex-profile-switcher
+            binary: cxprof
           - target: x86_64-pc-windows-msvc
             os: windows-latest
-            binary: codex-profile-switcher.exe
+            binary: cxprof.exe
     steps:
       - uses: actions/checkout@v4
       - name: Install Rust
@@ -121,9 +121,9 @@ jobs:
             artifact="$(basename "$directory")"
             target="${artifact#codex-profile-switcher-}"
             if [ "$target" = "x86_64-pc-windows-msvc" ]; then
-              (cd "$directory" && zip -9 "../../release-assets/$artifact.zip" codex-profile-switcher.exe)
+              (cd "$directory" && zip -9 "../../release-assets/$artifact.zip" cxprof.exe)
             else
-              tar -C "$directory" -czf "release-assets/$artifact.tar.gz" codex-profile-switcher
+              tar -C "$directory" -czf "release-assets/$artifact.tar.gz" cxprof
             fi
           done
           (cd release-assets && sha256sum * > SHA256SUMS)

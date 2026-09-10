@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Shortened the installed command to `cxprof`.
+
 ## [0.1.0] - 2026-09-10
 
 ### Added
@@ -16,5 +20,5 @@ All notable changes to this project are documented here. The format follows
 - File-backed credential validation and actionable diagnostics.
 - Cross-platform CI, crates.io publishing, and GitHub release artifacts.
 
-[Unreleased]: https://github.com/wthrajat/codex-profile-switcher/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/wthrajat/codex-profile-switcher/releases/tag/v0.1.0
+[Unreleased]: https://github.com/wthrajat/codex-profiles/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/wthrajat/codex-profiles/releases/tag/v0.1.0

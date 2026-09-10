@@ -5,7 +5,7 @@ use clap::{Parser, Subcommand};
 
 #[derive(Debug, Parser)]
 #[command(
-    name = "codex-profile-switcher",
+    name = "cxprof",
     version,
     about = "Run Codex CLI with isolated local account profiles",
     long_about = "Create isolated CODEX_HOME directories and launch the installed Codex CLI without touching the default ~/.codex state.",

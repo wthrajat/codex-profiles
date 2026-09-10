@@ -6,8 +6,8 @@ rust-version = "1.85"
 description = "Launch Codex CLI with isolated local account profiles"
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/wthrajat/codex-profile-switcher"
-homepage = "https://github.com/wthrajat/codex-profile-switcher"
+repository = "https://github.com/wthrajat/codex-profiles"
+homepage = "https://github.com/wthrajat/codex-profiles"
 documentation = "https://docs.rs/codex-profile-switcher"
 authors = ["Rajat Khanduri <logsinx@proton.me> (https://wthrajat.com)"]
 keywords = ["codex", "profiles", "cli", "authentication"]
@@ -25,7 +25,7 @@ include = [
 ]
 
 [[bin]]
-name = "codex-profile-switcher"
+name = "cxprof"
 path = "src/main.rs"
 
 [dependencies]

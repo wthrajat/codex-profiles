@@ -3,7 +3,7 @@ use std::path::{Path, PathBuf};
 use std::process::{Command, Output};
 
 fn switcher(root: &Path) -> Command {
-    let mut command = Command::new(env!("CARGO_BIN_EXE_codex-profile-switcher"));
+    let mut command = Command::new(env!("CARGO_BIN_EXE_cxprof"));
     command.arg("--root").arg(root);
     command
 }

@@ -5,7 +5,7 @@ publish the crate.
 
 ## One-time setup
 
-1. Create `https://github.com/wthrajat/codex-profile-switcher` and add it as the
+1. Create `https://github.com/wthrajat/codex-profiles` and add it as the
    `origin` remote.
 2. Create a crates.io API token scoped to `codex-profile-switcher` and add it to
    the GitHub repository as an Actions secret named `CRATES_IO_TOKEN`.

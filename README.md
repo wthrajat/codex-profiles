@@ -1,7 +1,7 @@
 # codex-profile-switcher
 
 [![crates.io](https://img.shields.io/crates/v/codex-profile-switcher.svg)](https://crates.io/crates/codex-profile-switcher)
-[![CI](https://github.com/wthrajat/codex-profile-switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/wthrajat/codex-profile-switcher/actions/workflows/ci.yml)
+[![CI](https://github.com/wthrajat/codex-profiles/actions/workflows/ci.yml/badge.svg)](https://github.com/wthrajat/codex-profiles/actions/workflows/ci.yml)
 
 Rust CLI for using multiple local Codex accounts without logging one account out to use another. Each named profile is a complete, isolated `CODEX_HOME`
 
@@ -11,8 +11,10 @@ Rust CLI for using multiple local Codex accounts without logging one account out
 cargo install codex-profile-switcher
 ```
 
+This installs the `cxprof` command.
+
 Prebuilt binaries for Linux, macOS, and Windows are also attached to each
-[GitHub release](https://github.com/wthrajat/codex-profile-switcher/releases).
+[GitHub release](https://github.com/wthrajat/codex-profiles/releases).
 
 To uninstall the binary, run `cargo uninstall codex-profile-switcher`. Cargo
 does not remove profile data; remove each profile explicitly before uninstalling
@@ -22,14 +24,14 @@ if you no longer need its Codex state.
 
 ```console
 # Create a private Codex home and authenticate it once.
-codex-profile-switcher create work
-codex-profile-switcher login work
+cxprof create work
+cxprof login work
 
 # Start interactive Codex with that account.
-codex-profile-switcher run work
+cxprof run work
 
 # Or forward any Codex command and arguments unchanged.
-codex-profile-switcher run work -- exec "review this repository"
+cxprof run work -- exec "review this repository"
 ```
 
 Create another profile the same way. Processes using different profiles can
@@ -38,14 +40,14 @@ run concurrently because each child receives a different `CODEX_HOME`.
 ## Commands
 
 ```text
-codex-profile-switcher create <name>
-codex-profile-switcher list [--check]
-codex-profile-switcher path <name>
-codex-profile-switcher login <name> [--device-auth]
-codex-profile-switcher status <name>
-codex-profile-switcher run <name> [--] [codex arguments...]
-codex-profile-switcher doctor [name]
-codex-profile-switcher remove <name> [--yes]
+cxprof create <name>
+cxprof list [--check]
+cxprof path <name>
+cxprof login <name> [--device-auth]
+cxprof status <name>
+cxprof run <name> [--] [codex arguments...]
+cxprof doctor [name]
+cxprof remove <name> [--yes]
 ```
 
 - `create` accepts portable names containing 1–64 ASCII letters, digits,
