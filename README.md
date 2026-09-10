@@ -4,12 +4,9 @@
 [![CI](https://github.com/wthrajat/codex-profiles/actions/workflows/ci.yml/badge.svg)](https://github.com/wthrajat/codex-profiles/actions/workflows/ci.yml)
 [![License](https://img.shields.io/crates/l/cxprof.svg)](LICENSE)
 
-Use more than one Codex account without signing in and out. Each profile gets
-its own `CODEX_HOME`, so personal and work sessions can run side by side.
+Use more than one Codex account without signing in and out. Each profile gets its own `CODEX_HOME`, so personal and work sessions can run side by side.
 
 ## Install
-
-Install the [Codex CLI](https://github.com/openai/codex), then install `cxprof`:
 
 ```console
 cargo install cxprof
@@ -58,9 +55,9 @@ cxprof run work -- exec "review this repository"
 
 Run `cxprof --help` or `cxprof <command> --help` for full usage.
 
-## Security
+## Good stuff
 
-Authentication follows the
+Everything is legal and acc to the docs. Authentication follows the
 [official OpenAI documentation](https://learn.chatgpt.com/docs/auth). `cxprof`
 uses the documented `CODEX_HOME`, file-backed credential storage, and normal
 `codex login` flow. It does not bypass authentication, usage limits, or
